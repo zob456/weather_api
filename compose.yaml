@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  weather-api:
+    container_name: weather-api
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    environment:
+      ENV: local
+      WEATHER_API_KEY: 9cfa2ba387b62d09ca42cce6ed4e87b1
+    ports:
+      - 8080:8080

@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  weather-api:
+    container_name: weather-api
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    restart: unless-stopped
+    environment:
+      ENV: local
+      WEATHER_API_KEY: ## get an API key. More info at https://openweathermap.org/faq
+    ports:
+      - 8080:8080
